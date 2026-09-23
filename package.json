@@ -1,0 +1,37 @@
+{
+  "name": "@fieldrobin/sdk",
+  "version": "0.1.1",
+  "description": "Typed JS/TS client for FieldRobin public discovery, OpenAPI, A2A, and UCP — fetch-based, zero deps",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs"
+    }
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/praisondani/fieldrobin-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/praisondani/fieldrobin-sdk/issues"
+  },
+  "homepage": "https://fieldrobin.com/sdk",
+  "files": [
+    "index.mjs",
+    "index.d.ts",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "scripts": {
+    "test": "node --test test/sdk.test.mjs"
+  }
+}

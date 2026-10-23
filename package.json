@@ -1,7 +1,7 @@
 {
   "name": "@fieldrobin/sdk",
-  "version": "0.1.2",
-  "description": "Typed JS/TS client for FieldRobin public discovery, OpenAPI, A2A, and UCP — fetch-based, zero deps",
+  "version": "0.2.0",
+  "description": "Typed JavaScript/TypeScript client for FieldRobin public APIs and authenticated MCP tools — fetch-based, zero deps",
   "type": "module",
   "exports": {
     ".": {
@@ -33,6 +33,7 @@
     "package.json"
   ],
   "scripts": {
-    "test": "node --test test/sdk.test.mjs"
+    "test": "node --test test/sdk.test.mjs",
+    "prepublishOnly": "npm test"
   }
 }

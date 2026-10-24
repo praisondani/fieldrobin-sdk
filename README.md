@@ -12,13 +12,10 @@ through Authorization Code with PKCE, then pass it to the client. The SDK does
 not prompt for approval, so your application must get user approval before a
 state-changing tool call. The server also enforces the token’s granted scopes.
 
-## Published version
+## MCP version support
 
-The npm `latest` release is currently `0.1.1`. It supports public discovery and
-agent API methods. Authenticated workspace MCP support is in source version
-`0.2.0` and is not available from npm yet. The `FieldRobinMcpClient` examples
-below require `@fieldrobin/sdk@0.2.0` or later. Check the registry before
-installing:
+`FieldRobinMcpClient` requires `@fieldrobin/sdk` version `0.2.0` or later.
+Check the version published to npm:
 
 ```sh
 npm view @fieldrobin/sdk version
@@ -62,15 +59,14 @@ Install the current npm release for public discovery and agent API methods:
 npm install @fieldrobin/sdk
 ```
 
-For authenticated MCP workspace tools before the npm `0.2.0` release, install
-the public GitHub `v0.2.0` tag:
+For authenticated MCP workspace tools, install version `0.2.0` or later:
 
 ```sh
-npm install github:praisondani/fieldrobin-sdk#v0.2.0
+npm install @fieldrobin/sdk@^0.2.0
 ```
 
-Before using `FieldRobinMcpClient`, check public endpoint readiness with the
-CLI source branch `codex/npm-release-status` (version `0.2.0`):
+If npm has not published `0.2.0` yet, install the public GitHub source versions
+and check endpoint readiness with `fieldrobin doctor`:
 
 ```sh
 npm install github:praisondani/fieldrobin-sdk#v0.2.0 github:praisondani/fieldrobin-cli#codex/npm-release-status

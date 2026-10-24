@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import { describe, it } from "node:test";
 import {
   FieldRobinApiError,
@@ -422,5 +423,19 @@ describe("FieldRobin MCP client", () => {
       client.callTool("get-workspace-summary"),
       /OAuth access token with mcp:read/,
     );
+  });
+});
+
+describe("SDK documentation", () => {
+  it("checks public endpoints before starting MCP or OAuth setup", () => {
+    const readme = readFileSync(new URL("../README.md", import.meta.url), "utf8");
+
+    assert.match(readme, /FieldRobinMcpClient.*0\.2\.0` or later/s);
+    assert.match(readme, /npm view @fieldrobin\/sdk version/);
+    assert.doesNotMatch(readme, /npm `latest` release is currently `0\.1\.1`/);
+    assert.match(readme, /fieldrobin doctor/);
+    assert.match(readme, /OAuth metadata/i);
+    assert.match(readme, /does not send an OAuth token or read workspace data/i);
+    assert.match(readme, /stop/i);
   });
 });

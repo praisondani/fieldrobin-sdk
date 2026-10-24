@@ -12,6 +12,15 @@ through Authorization Code with PKCE, then pass it to the client. The SDK does
 not prompt for approval, so your application must get user approval before a
 state-changing tool call. The server also enforces the token’s granted scopes.
 
+## MCP version support
+
+`FieldRobinMcpClient` requires `@fieldrobin/sdk` version `0.2.0` or later.
+Check the version published to npm:
+
+```sh
+npm view @fieldrobin/sdk version
+```
+
 The FieldRobin product repository is private. **This repository** is the
 public source for the npm package
 [`@fieldrobin/sdk`](https://www.npmjs.com/package/@fieldrobin/sdk).
@@ -44,9 +53,31 @@ For quick terminal checks without writing code, use
 
 ## Install
 
+Install the current npm release for public discovery and agent API methods:
+
 ```sh
 npm install @fieldrobin/sdk
 ```
+
+For authenticated MCP workspace tools, install version `0.2.0` or later:
+
+```sh
+npm install @fieldrobin/sdk@^0.2.0
+```
+
+If npm has not published `0.2.0` yet, install the public GitHub source versions
+and check endpoint readiness with `fieldrobin doctor`:
+
+```sh
+npm install github:praisondani/fieldrobin-sdk#v0.2.0 github:praisondani/fieldrobin-cli#codex/npm-release-status
+npx fieldrobin doctor
+```
+
+`fieldrobin doctor` checks API health, OAuth metadata, and the unauthenticated
+MCP tool catalog. It does not send an OAuth token or read workspace data. A
+passing result confirms public routing and discovery only; it does not verify
+an OAuth grant or workspace tool call. If any check fails, stop before OAuth
+registration or connection setup.
 
 ## Example
 

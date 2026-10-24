@@ -69,11 +69,19 @@ the public GitHub `v0.2.0` tag:
 npm install github:praisondani/fieldrobin-sdk#v0.2.0
 ```
 
-Before using `FieldRobinMcpClient`, check `https://fieldrobin.com/api/health`.
-HTTP 200 confirms that the Laravel API route is reachable, but MCP and
-OAuth are available only after the full production smoke passes. If health
-returns 404 or an MCP/OAuth request fails, stop and wait for a successful
-release check.
+Before using `FieldRobinMcpClient`, check public endpoint readiness with the
+CLI source version `0.2.0`:
+
+```sh
+npm install github:praisondani/fieldrobin-sdk#v0.2.0 github:praisondani/fieldrobin-cli#main
+npx fieldrobin doctor
+```
+
+`fieldrobin doctor` checks API health, OAuth metadata, and the unauthenticated
+MCP tool catalog. It does not send an OAuth token or read workspace data. A
+passing result confirms public routing and discovery only; it does not verify
+an OAuth grant or workspace tool call. If any check fails, stop before OAuth
+registration or connection setup.
 
 ## Example
 

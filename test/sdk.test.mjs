@@ -427,11 +427,12 @@ describe("FieldRobin MCP client", () => {
 });
 
 describe("SDK documentation", () => {
-  it("checks production health before starting MCP or OAuth setup", () => {
+  it("checks public endpoints before starting MCP or OAuth setup", () => {
     const readme = readFileSync(new URL("../README.md", import.meta.url), "utf8");
 
-    assert.match(readme, /\/api\/health/);
-    assert.match(readme, /HTTP 200/);
-    assert.match(readme, /stop|do not continue|wait/i);
+    assert.match(readme, /fieldrobin doctor/);
+    assert.match(readme, /OAuth metadata/i);
+    assert.match(readme, /does not send an OAuth token or read workspace data/i);
+    assert.match(readme, /stop/i);
   });
 });

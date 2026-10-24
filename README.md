@@ -12,6 +12,18 @@ through Authorization Code with PKCE, then pass it to the client. The SDK does
 not prompt for approval, so your application must get user approval before a
 state-changing tool call. The server also enforces the token’s granted scopes.
 
+## Published version
+
+The npm `latest` release is currently `0.1.1`. It supports public discovery and
+agent API methods. Authenticated workspace MCP support is in source version
+`0.2.0` and is not available from npm yet. The `FieldRobinMcpClient` examples
+below require `@fieldrobin/sdk@0.2.0` or later. Check the registry before
+installing:
+
+```sh
+npm view @fieldrobin/sdk version
+```
+
 The FieldRobin product repository is private. **This repository** is the
 public source for the npm package
 [`@fieldrobin/sdk`](https://www.npmjs.com/package/@fieldrobin/sdk).

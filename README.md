@@ -70,10 +70,10 @@ npm install github:praisondani/fieldrobin-sdk#v0.2.0
 ```
 
 Before using `FieldRobinMcpClient`, check public endpoint readiness with the
-CLI source version `0.2.0`:
+CLI source branch `codex/npm-release-status` (version `0.2.0`):
 
 ```sh
-npm install github:praisondani/fieldrobin-sdk#v0.2.0 github:praisondani/fieldrobin-cli#main
+npm install github:praisondani/fieldrobin-sdk#v0.2.0 github:praisondani/fieldrobin-cli#codex/npm-release-status
 npx fieldrobin doctor
 ```
 

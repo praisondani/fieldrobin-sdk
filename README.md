@@ -56,8 +56,17 @@ For quick terminal checks without writing code, use
 
 ## Install
 
+Install the current npm release for public discovery and agent API methods:
+
 ```sh
 npm install @fieldrobin/sdk
+```
+
+For authenticated MCP workspace tools before the npm `0.2.0` release, install
+the public GitHub `v0.2.0` tag:
+
+```sh
+npm install github:praisondani/fieldrobin-sdk#v0.2.0
 ```
 
 ## Example
